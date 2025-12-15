@@ -1,0 +1,45 @@
+---
+import Button from "./Button.astro";
+---
+
+<div class="w-full flex justify-center py-20">
+  <div class="slidein-up rounded-lg overflow-hidden shadow-md max-w-sm w-full">
+
+    <!-- Top dark green section -->
+    <div class="bg-[#187770] text-white text-center p-6">
+      <h2 class="text-xl font-bold leading-snug">
+        Book a meeting<br />
+        <span class="block text-base font-normal mt-1">or</span>
+        see how it works
+      </h2>
+    </div>
+
+    <!-- Bottom light green section -->
+    <div class="bg-[#68C9A6] flex flex-col items-center gap-4 p-6">
+      <Button text="Book a meeting" href="#" />
+      <Button text="see how it works" href="#" />
+    </div>
+
+  </div>
+</div>
+
+<script>
+	/* Import af Motion One bibliotek */
+	import { animate, stagger, inView, scroll } from "motion";
+
+inView(".slidein-up", (el) => {
+  animate(
+    el,
+    { opacity: [0, 1], y: ["100px", "0px"] },
+    {
+      duration: 0.8,
+      easing: "cubic-bezier(0.22, 1, 0.36, 1)"
+    }
+  );
+
+  // Hvis du vil have den til at animere igen ved scroll out/in:
+  return () => {
+    animate(el, { opacity: 0, y: "100px" }, { duration: 0.3 });
+  };
+});
+</script>

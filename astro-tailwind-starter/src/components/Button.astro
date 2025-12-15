@@ -1,0 +1,24 @@
+---
+interface Props {
+  text: string;
+  href?: string;
+  size?: "md" | "lg";
+}
+
+const {
+  text,
+  href = "#",
+  size = "md"
+} = Astro.props;
+
+const baseClasses =
+  "inline-flex items-center justify-center font-medium rounded-md transition-colors bg-[#2C6FE8] text-white hover:bg-blue-600";
+
+const sizeClasses = size === "lg"
+  ? "px-6 py-3 text-lg"
+  : "px-4 py-2 text-base";
+---
+
+<a href={href} class={`${baseClasses} ${sizeClasses}`}>
+  {text}
+</a>

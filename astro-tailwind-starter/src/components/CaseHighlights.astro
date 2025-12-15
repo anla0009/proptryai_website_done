@@ -1,0 +1,70 @@
+<section class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div id="steps-stagger" class="grid grid-cols-1 md:grid-cols-2 gap-16 justify-items-center">
+
+      <!-- Case 1 -->
+      <div class="step-card bg-[#68C9A6] rounded-xl w-full max-w-sm overflow-hidden">
+
+        <!-- Image placeholder -->
+        <div class="h-56 bg-[#187770] flex items-center justify-center text-white text-sm">
+          Image placeholder
+        </div>
+
+        <!-- Content -->
+        <div class="p-6 text-white">
+          <h3 class="text-lg mb-3">
+            Copenhagen Properties: AI strengthens decision-making and planned maintenance
+          </h3>
+
+          <p class="text-sm leading-relaxed">
+            Gains strategic overview with proprty.ai, enabling faster decisions
+            and shifting maintenance from reactive to planned.
+          </p>
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="step-card bg-[#68C9A6] rounded-xl w-full max-w-sm overflow-hidden">
+
+        <!-- Image placeholder -->
+        <div class="h-56 bg-[#187770] flex items-center justify-center text-white text-sm">
+          Image placeholder
+        </div>
+
+        <!-- Content -->
+        <div class="p-6 text-white">
+          <h3 class="text-lg mb-3">
+            KAB: Digitizing 6 million m² with AI and a unified data foundation
+          </h3>
+
+          <p class="text-sm leading-relaxed">
+            Digitizes 6 million m² and 65,000 units with proprty.ai, creating a shared
+            data foundation for better maintenance planning.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+	/* Import af Motion One bibliotek */
+	import { animate, stagger, inView, scroll } from "motion";
+
+inView("#steps-stagger", () => {
+  animate(
+    ".step-card",
+    { 
+      opacity: [0, 1], 
+      x: ["100px", "0px"] 
+    },
+    {
+      duration: 0.6,
+      delay: stagger(0.2), // one-by-one effect
+      easing: "cubic-bezier(0.22, 1, 0.36, 1)"
+    }
+  );
+});
+
+	</script>

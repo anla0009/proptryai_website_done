@@ -1,0 +1,69 @@
+---
+import Button from "./Button.astro";
+
+interface Props {
+  title: string;        // Dynamic H1 text
+  background?: string;  // Optional custom background image
+}
+
+const {
+  title,
+  background = "https://via.placeholder.com/1600x900" // Default placeholder
+} = Astro.props;
+---
+
+<section class="relative w-full h-[70vh] md:h-[80vh] font-[Encode_Sans]">
+
+  <!-- BACKGROUND IMAGE -->
+  <div class="absolute inset-0 overflow-hidden">
+    <img 
+      src={background} 
+      alt="Hero background" 
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <!-- GREEN TEXT PANEL (aligned right) -->
+  <div 
+  class="hero-panel absolute right-0 top-1/2 -translate-y-1/2
+         bg-[#187770] bg-opacity-95 text-white
+         w-full max-w-lg px-8 py-10 md:px-12 md:py-16 rounded-none md:rounded-lg
+         flex flex-col gap-6 md:gap-8">
+
+
+    <!-- H1 TITLE (Dynamic) -->
+    <h1 class="text-3xl md:text-4xl font-semibold leading-tight">
+      {title}
+    </h1>
+
+    <!-- CTA BUTTONS -->
+    <div class="flex flex-col sm:flex-row gap-4">
+      <Button text="Book a meeting" href="/meeting" size="lg" />
+      <Button text="See how it works" href="/how-it-works" size="lg" />
+    </div>
+
+  </div>
+</section>
+
+<script> 
+  /* Import af Motion One bibliotek */
+	import { animate, stagger, inView, scroll } from "motion";
+
+  inView(".hero-panel", (element) => {
+    // Slide in from right
+    animate(
+      element,
+      { transform: ["translateX(100%)", "translateX(0%)"] },
+      { duration: 1.2, easing: "ease-out" }
+    );
+
+    // (Optional) what happens when it leaves view
+    // return () => {
+    //   animate(
+    //     element,
+    //     { transform: "translateX(100%)" },
+    //     { duration: 0.8 }
+    //   );
+    // };
+  });
+</script>

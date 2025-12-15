@@ -1,0 +1,40 @@
+<section class="w-full py-24">
+  <h2 class="text-center text-4xl text-[#187770] mb-16">
+    Customers we work with
+  </h2>
+
+  <div
+    x-data="{ x: 0 }"
+    x-init="
+      setInterval(() => {
+        x -= 0.1;
+        if (x <= -50) x = 0;
+      }, 16)
+    "
+    class="overflow-hidden relative"
+  >
+    <!-- Moving track -->
+    <div
+      class="flex items-center gap-20 w-max"
+      :style="`transform: translateX(${x}%)`"
+    >
+
+      <!-- Duplicate logos for seamless loop -->
+      <div class="flex items-center gap-20">
+        <img src="https://via.placeholder.com/160x60?text=Logo+1" alt="Logo 1" class="h-12 w-auto object-contain" />
+        <img src="https://via.placeholder.com/160x60?text=Logo+2" alt="Logo 2" class="h-12 w-auto object-contain" />
+        <img src="https://via.placeholder.com/160x60?text=Logo+3" alt="Logo 3" class="h-12 w-auto object-contain" />
+        <img src="https://via.placeholder.com/80x80?text=C" alt="Circle logo" class="h-12 w-auto object-contain rounded-full" />
+      </div>
+
+      <div class="flex items-center gap-20">
+        <img src="https://via.placeholder.com/160x60?text=Logo+1" alt="Logo 1" class="h-12 w-auto object-contain" />
+        <img src="https://via.placeholder.com/160x60?text=Logo+2" alt="Logo 2" class="h-12 w-auto object-contain" />
+        <img src="https://via.placeholder.com/160x60?text=Logo+3" alt="Logo 3" class="h-12 w-auto object-contain" />
+        <img src="https://via.placeholder.com/80x80?text=C" alt="Circle logo" class="h-12 w-auto object-contain rounded-full" />
+      </div>
+
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,220 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from '../components/Button.astro';
+import Link from '../components/Link.astro';
+import { Image } from 'astro:assets';
+import thumbsup from "../assets/images/thumbsup.png";
+import Hero from '../components/Hero.astro';
+import LogoBanner from "../components/LogoBanner.astro";
+import CaseHighlights from "../components/CaseHighlights.astro";
+---
+<MainLayout title="produkt">
+    <Hero title="Understand Proprty.ai quickly - no local context needed." />
+
+<section class="w-full py-16">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Title -->
+    <h2 class="text-3xl font-semibold text-[#187770] text-center mb-12">
+      How It Works
+    </h2>
+
+    <!-- 3-Step Grid -->
+    <div id="steps-stagger" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Step 1 -->
+      <div class="step-card bg-[#68C9A6] rounded-lg p-6 text-white">
+        <!-- Icon Placeholder -->
+        <div class="w-10 h-10 bg-white/40 rounded-md mb-4 flex items-center justify-center text-[#187770]">
+          ICON
+        </div>
+
+        <h3 class="text-lg font-semibold mb-1">Import & Sync Data</h3>
+        <p class="text-sm leading-relaxed">
+          Bring in building data from your systems automatically.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card bg-[#68C9A6] rounded-lg p-6 text-white">
+        <div class="w-10 h-10 bg-white/40 rounded-md mb-4 flex items-center justify-center text-[#187770]">
+          ICON
+        </div>
+
+        <h3 class="text-lg font-semibold mb-1">AI Insights & Predictions</h3>
+        <p class="text-sm leading-relaxed">
+          Get condition scores, remaining life, and maintenance forecasts.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card bg-[#68C9A6] rounded-lg p-6 text-white">
+        <div class="w-10 h-10 bg-white/40 rounded-md mb-4 flex items-center justify-center text-[#187770]">
+          ICON
+        </div>
+
+        <h3 class="text-lg font-semibold mb-1">Plan & Execute</h3>
+        <p class="text-sm leading-relaxed">
+          Translate insights into prioritized tasks and long-term plans.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="w-full py-16">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <!-- Section Title -->
+    <h2 class="text-2xl font-semibold text-[#187770] mb-10">
+      Core feature
+    </h2>
+
+    <!-- UI Screenshot Placeholder -->
+    <div class="flex justify-center mb-10">
+      <img 
+        src="https://via.placeholder.com/600x450?text=UI+Placeholder" 
+        alt="Core feature UI placeholder"
+        class="rounded-md shadow"
+      />
+    </div>
+
+    <!-- Feature Title -->
+    <h3 class="text-lg font-semibold mb-1">
+      AI Condition Analysis
+    </h3>
+
+    <!-- Feature Description -->
+    <p class="text-sm opacity-80">
+      Fast, accurate assessment of building parts.
+    </p>
+
+  </div>
+</section>
+
+<section class="w-full py-16">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <!-- UI Screenshot Placeholder -->
+    <div class="flex justify-center mb-10">
+      <img 
+        src="https://via.placeholder.com/700x420?text=ROI+Graph+Placeholder" 
+        alt="Maintenance Planning UI"
+        class="rounded-md shadow"
+      />
+    </div>
+
+    <!-- Feature Title -->
+    <h3 class="text-lg font-semibold mb-1">
+      Maintenance Planning
+    </h3>
+
+    <!-- Feature Subtitle -->
+    <p class="text-sm opacity-80">
+      Automated multi-year plans based on data.
+    </p>
+
+  </div>
+</section>
+
+<section class="w-full py-16">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <!-- UI Screenshot Placeholder -->
+    <div class="flex justify-center mb-10">
+      <img 
+        src="https://via.placeholder.com/700x420?text=ROI+Graph+Placeholder" 
+        alt="Maintenance Planning UI"
+        class="rounded-md shadow"
+      />
+    </div>
+
+    <!-- Feature Title -->
+    <h3 class="text-lg font-semibold mb-1">
+      FM Integration
+    </h3>
+
+    <!-- Feature Subtitle -->
+    <p class="text-sm opacity-80">
+      Works with your current systems.
+    </p>
+
+  </div>
+</section>
+
+<section class="w-full py-16">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <!-- UI Screenshot Placeholder -->
+    <div class="flex justify-center mb-10">
+      <img 
+        src="https://via.placeholder.com/700x420?text=ROI+Graph+Placeholder" 
+        alt="Maintenance Planning UI"
+        class="rounded-md shadow"
+      />
+    </div>
+
+    <!-- Feature Title -->
+    <h3 class="text-lg font-semibold mb-1">
+      CO₂ & ESG Metrics
+    </h3>
+
+    <!-- Feature Subtitle -->
+    <p class="text-sm opacity-80">
+    Track and reduce environmental impact.
+    </p>
+
+  </div>
+</section>
+
+<section id="steps-stagger" class="w-full py-20">
+  <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
+
+    <!-- Block 1 -->
+    <div class="step-card bg-[#85C8AE] text-white rounded-lg p-8">
+      <p class="text-xl leading-snug">Built for portfolio<br/>complexity</p>
+    </div>
+
+    <!-- Block 2 -->
+    <div class="step-card bg-[#85C8AE] text-white rounded-lg p-8">
+      <p class="text-xl leading-snug">Designed for<br/>international workflows</p>
+    </div>
+
+    <!-- Block 3 -->
+    <div class="step-card bg-[#85C8AE] text-white rounded-lg p-8">
+      <p class="text-xl leading-snug">Structured for rapid<br/>understanding</p>
+    </div>
+
+    <!-- Block 4 -->
+    <div class="step-card bg-[#85C8AE] text-white rounded-lg p-8">
+      <p class="text-xl leading-snug">Neutral microcopy and<br/>clear labels</p>
+    </div>
+
+  </div>
+</section>
+
+
+</MainLayout>
+
+<script>
+	/* Import af Motion One bibliotek */
+	import { animate, stagger, inView, scroll } from "motion";
+
+	animate( "body", { opacity: [ 0, 1] }, { duration: 1 })
+ 
+inView("#steps-stagger", () => {
+  animate(
+    ".step-card",
+    { 
+      opacity: [0, 1], x: ["100px", "0px"] 
+    },
+    {
+      duration: 0.6,
+      delay: stagger(0.2), // one-by-one effect
+      easing: "cubic-bezier(0.22, 1, 0.36, 1)"
+    }
+  );
+});
+    
+	</script>

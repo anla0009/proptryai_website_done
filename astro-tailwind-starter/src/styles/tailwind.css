@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Inconsolata:wght@200..900&display=swap');
+
+@plugin '@tailwindcss/typography';
+@plugin '@tailwindcss/forms';
+@import "tailwindcss-animated";
+@import "tailwindcss-intersect";
+
+
+@theme {
+  /* Her tilføjes theme variable // tokens */
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+/* Brug Embed code på overskrifter */
+  h1, h2, h3, h4, p, a, button, div, span, li, input, textarea {
+    font-family: 'Embed Code', 'Inconsolata', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    
+  }
+  
+
+
+}
+
+@layer components{
+  /* baseline for animated step cards so motion can animate from hidden state */
+  .step-card {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+@layer utilities{
+  
+}

@@ -1,0 +1,181 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from '../components/Button.astro';
+import Link from '../components/Link.astro';
+import { Image } from 'astro:assets';
+import thumbsup from "../assets/images/thumbsup.png";
+import Hero from '../components/Hero.astro';
+import LogoBanner from "../components/LogoBanner.astro";
+import CaseHighlights from "../components/CaseHighlights.astro";
+---
+<MainLayout title="produkt">
+    <Hero title="Effortless oversight and smarter maintenance planning with AI powered insights." />
+
+    <section class="w-full bg-[#FDFBE8] py-24 font-[Encode_Sans]">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <!-- Headline -->
+    <h2 class="text-3xl md:text-4xl text-[#187770] leading-snug mb-16">
+      Get a real-time understanding of your<br />
+      buildings, trends, and tasks — all from<br />
+      one platform.
+    </h2>
+
+   
+
+    <!-- Pains & Gains Columns -->
+    <div id="step-stagger" class="flex flex-col items-center  md:flex-row justify-center gap-20">
+
+      <!-- Pains Column -->
+      <div class="flex flex-col gap-4 w-[280px]">
+        <h3 class="text-lg font-medium text-black text-center md:text-left">Pains</h3>
+        <div class="step-card bg-[#68C9A6] text-white p-4 rounded-lg">
+          Too many manual processes slowing daily work.
+        </div>
+        <div class="step-card bg-[#68C9A6] text-white p-4 rounded-lg">
+          Hard to keep an overview across properties.
+        </div>
+        <div class="step-card bg-[#68C9A6] text-white p-4 rounded-lg">
+          Documentation scattered in systems and emails.
+        </div>
+        <div class="step-card bg-[#68C9A6] text-white p-4 rounded-lg">
+          Too much dependency on individual experts.
+        </div>
+      </div>
+
+      <!-- Gains Column -->
+      <div class="flex flex-col gap-4 w-[280px]">
+        <h3 class="text-lg font-medium text-black text-center md:text-left">Gains</h3>
+        <div class="step-card bg-[#68C9A6] text-white p-4 rounded-lg">
+          Automated condition assessments and task suggestions.
+        </div>
+        <div class="step-card bg-[#68C9A6] text-white p-4 rounded-lg">
+          Unified data for all buildings in one view.
+        </div>
+        <div class="step-card bg-[#68C9A6] text-white p-4 rounded-lg">
+          Clear priorities and actionable insights.
+        </div>
+        <div class="step-card bg-[#68C9A6] text-white p-4 rounded-lg">
+          Reduced operational workload and fewer surprises.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<CaseHighlights />
+
+<section class="w-full py-24">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+
+    <!-- Main Title -->
+    <h2 class="text-4xl text-[#187770] font-semibold mb-16">
+      How It Works
+    </h2>
+
+    <!-- UI Image Placeholder -->
+    <div class="flex justify-center mb-16">
+      <img 
+        src="https://via.placeholder.com/700x350?text=UI+Placeholder" 
+        alt="How it works UI screenshot placeholder"
+        class="rounded-lg shadow-md"
+      />
+    </div>
+
+    <!-- Subtitle -->
+    <h3 class="text-xl font-semibold mb-4 ">
+      AI-Driven Condition Assessments
+    </h3>
+
+    <!-- Body text -->
+    <p class="text-sm text-black opacity-80 leading-relaxed max-w-xl mx-auto">
+      AI analyzes building data and predicts condition and remaining life with precision.
+    </p>
+
+  </div>
+</section>
+
+
+<section class="w-full bg-[#FDFBE8] py-24 font-[Encode_Sans]">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+
+    <!-- UI Image Placeholder -->
+    <div class="flex justify-center mb-16">
+      <img 
+        src="https://via.placeholder.com/700x350?text=UI+Placeholder" 
+        alt="How it works UI screenshot placeholder"
+        class="rounded-lg shadow-md"
+      />
+    </div>
+
+    <!-- Subtitle -->
+    <h3 class="text-xl font-semibold mb-4 ">
+      Smart Maintenance Plans
+    </h3>
+
+    <!-- Body text -->
+    <p class="text-sm text-black opacity-80 leading-relaxed max-w-xl mx-auto">
+      Automated multi-year plans based on objective, data-driven insights.
+    </p>
+
+  </div>
+</section>
+
+
+<section class="w-full bg-[#FDFBE8] py-20 font-[Encode_Sans]">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <div id="steps-stagger" class="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
+
+      <!-- Card 1 -->
+      <div class="bg-[#68C9A6] text-white p-6 rounded-lg w-[300px] step-card">
+        AI condition assessments in minutes, not hours
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-[#68C9A6] text-white p-6 rounded-lg w-[300px] step-card">
+        Significant reduction in urgent repairs thanks to predictive planning
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-[#68C9A6] text-white p-6 rounded-lg w-[300px] step-card">
+        All building data stored in one unified dashboard
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-[#68C9A6] text-white p-6 rounded-lg w-[300px] step-card">
+        More stable budgets through proactive maintenance (optional)
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+</MainLayout>
+
+<script>
+	/* Import af Motion One bibliotek */
+	import { animate, stagger, inView, scroll } from "motion";
+
+	animate( "body", { opacity: [ 0, 1] }, { duration: 1 })
+
+ inView("#steps-stagger", () => {
+  animate(
+    ".step-card",
+    { 
+      opacity: [0, 1], 
+      x: ["100px", "0px"] 
+    },
+    {
+      duration: 0.6,
+      delay: stagger(0.2), // one-by-one effect
+      easing: "cubic-bezier(0.22, 1, 0.36, 1)"
+    }
+  );
+});
+
+	</script>
