@@ -3,7 +3,7 @@ import Button from "./Button.astro";
 
 interface Props {
   title: string;
-  background?: string; // fallback poster image
+  background?: string;
 }
 
 const {
@@ -12,12 +12,12 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative w-full h-[70vh] md:h-[100vh] overflow-hidden">
+<section class="w-full overflow-hidden">
 
-  <!-- BACKGROUND VIDEO -->
-  <div class="absolute inset-0 overflow-hidden">
+  <!-- VIDEO -->
+  <div class="relative w-full h-auto sm:h-[65vh] md:h-[100vh]">
     <video
-      class="hero-video w-full h-full object-cover"
+      class="hero-video w-full h-full object-cover object-[50%_30%] md:object-center"
       autoplay
       muted
       loop
@@ -26,28 +26,30 @@ const {
     >
       <source src="/proprty_hero_video.mp4" type="video/mp4" />
     </video>
-  </div>
 
-  <button
-    class="video-toggle absolute bottom-25 right-25 z-20
-           inline-flex items-center justify-center
-           font-medium rounded-md transition-colors
-           bg-[#2C6FE8] text-white hover:bg-blue-600
-           px-6 py-3 text-base"
-    aria-label="Toggle video sound"
-  >
-     Muted
-  </button>
+    <!-- Toggle button -->
+    <button
+      class="video-toggle absolute bottom-6 right-6 z-20
+             inline-flex items-center justify-center
+             font-medium rounded-md transition-colors
+             bg-[#2C6FE8] text-white hover:bg-blue-600
+             px-5 py-2 text-sm md:px-6 md:py-3 md:text-base"
+    >
+      Muted
+    </button>
+  </div>
 
   <!-- GREEN TEXT PANEL -->
   <div 
-    class="hero-panel absolute right-0 top-1/2 -translate-y-1/2
+    class="hero-panel relative md:absolute
+           md:right-0 md:top-1/2 md:-translate-y-1/2
            bg-[#187770] bg-opacity-95 text-white
-           w-full max-w-lg px-8 py-10 md:px-12 md:py-16
+           w-full max-w-lg
+           px-6 py-8 md:px-12 md:py-16
+           mt-6 md:mt-0
            rounded-none md:rounded-lg
            flex flex-col gap-6 md:gap-8
-           transition-all duration-500 ease-out
-           opacity-100 translate-x-0">
+           transition-all duration-500 ease-out">
 
     <h1 class="text-3xl md:text-4xl font-semibold leading-tight">
       {title}
@@ -57,8 +59,8 @@ const {
       <Button text="Book a meeting" href="/meeting" size="lg" />
       <Button text="See how it works" href="/how-it-works" size="lg" />
     </div>
-
   </div>
+
 </section>
 
 <script type="module">
@@ -71,12 +73,10 @@ const {
       video.muted = !video.muted;
 
       if (!video.muted) {
-        // MUTED til unmute
         heroPanel.classList.add("opacity-0", "translate-x-20");
         heroPanel.classList.remove("opacity-100", "translate-x-0");
         toggleBtn.textContent = "Sound on";
       } else {
-        // UNMUTED til mute
         heroPanel.classList.remove("opacity-0", "translate-x-20");
         heroPanel.classList.add("opacity-100", "translate-x-0");
         toggleBtn.textContent = "Muted";
