@@ -1,165 +1,164 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from '../components/Button.astro';
-import Link from '../components/Link.astro';
-import { Image } from 'astro:assets';
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
-import Hero from '../components/Hero.astro';
+import Hero from "../components/Hero.astro";
 import LogoBanner from "../components/LogoBanner.astro";
 ---
+
 <MainLayout title="Titel">
-	<Hero title="Smarter property insights. Better maintenance decisions." />
+  <Hero title="Smarter property insights. Better maintenance decisions." />
 
-<section class="w-full py-32 font-[Encode_Sans]">
-  <div class="max-w-7xl mx-auto px-6">
+  <section class="w-full py-32 font-[Encode_Sans]">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-center text-4xl text-[#187770] mb-20">
+        The future of building maintenance
+      </h2>
 
-    <h2 class="text-center text-4xl text-[#187770] mb-20">
-      The future of building maintenance
-    </h2>
+      <div
+        id="steps-stagger"
+        class="flex flex-col md:flex-row justify-center items-center gap-12"
+      >
+        <div
+          class="step-card bg-[#68C9A6] text-white p-6 rounded-lg w-[300px] h-[300px] flex flex-col"
+        >
+          <h3 class="text-xl font-medium mb-4">
+            Global portfolio coverage
+          </h3>
+          <p class="text-[18px] leading-relaxed">
+            Used across 5 markets and 30,000+ properties to ensure consistent data
+            quality.
+          </p>
+        </div>
 
-    <!-- card 1 -->
-    <div id="steps-stagger" class="flex flex-col md:flex-row justify-center items-center gap-12">
+        <div
+          class="step-card bg-[#68C9A6] text-white p-6 rounded-lg w-[300px] h-[300px] flex flex-col"
+        >
+          <h3 class="text-xl font-medium mb-4">85% less manual work</h3>
+          <p class="text-[18px] leading-relaxed">
+            Automated data capture saves time, reduces errors, and maintains
+            reliable data.
+          </p>
+        </div>
 
-      <div class="step-card bg-[#68C9A6] text-white p-6 rounded-lg w-[300px] h-[300px] flex flex-col">
-        <h3 class="text-xl font-medium mb-4">Global portfolio coverage</h3>
-        <p class="text-[18px] leading-relaxed">
-          Used across 5 markets and 30,000+ properties to ensure consistent data quality.
-        </p>
+        <div
+          class="step-card bg-[#68C9A6] text-white p-6 rounded-lg w-[300px] h-[300px] flex flex-col"
+        >
+          <h3 class="text-xl font-medium mb-4">Reports in minutes</h3>
+          <p class="text-[18px] leading-relaxed">
+            Generate complete investment reports in under 3 minutes, ready for
+            decisions.
+          </p>
+        </div>
       </div>
-
-      <!-- card 2 -->
-      <div class="step-card bg-[#68C9A6] text-white p-6 rounded-lg w-[300px] h-[300px] flex flex-col">
-        <h3 class="text-xl font-medium mb-4">85% less manual work</h3>
-        <p class="text-[18px] leading-relaxed">
-          Automated data capture saves time, reduces errors, and maintains reliable data.
-        </p>
-      </div>
-
-      <!-- card 3 -->
-      <div class="step-card bg-[#68C9A6] text-white p-6 rounded-lg w-[300px] h-[300px] flex flex-col">
-        <h3 class="text-xl font-medium mb-4">Reports in minutes</h3>
-        <p class="text-[18px] leading-relaxed">
-          Generate complete investment reports in under 3 minutes, ready for decisions.
-        </p>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
+  <LogoBanner />
 
+  <!-- kasse 1 -->
+  <section class="w-full py-32">
+    <div class="max-w-5xl mx-auto px-6 text-center relative">
+      <div
+        class="relative mx-auto mb-20 w-full max-w-[320px] md:max-w-[600px]"
+      >
+        <img
+          src="/skitse1.webp"
+          alt="skitse1"
+          class="w-full h-auto object-cover rounded-lg"
+        />
+      </div>
 
-<LogoBanner />
+      <h2 class="text-3xl text-[#187770] mb-6 text-left">
+        Seamless integration with your FM system
+      </h2>
 
-
-<!-- kasse 1 -->
-<section class="w-full py-32 ">
-  <div class="max-w-5xl mx-auto px-6 text-center relative">
-
-    <!-- Illustration wrapper -->
-    <div class="relative mx-auto mb-20 w-[600px] h-full">
-
-      <!-- Illustration placeholder -->
-          <img src="/skitse1.webp" alt="skitse1" class="w-full h-full object-cover rounded-lg" />
-        
-
-      
+      <p
+        class="max-w-3xl mx-auto text-sm leading-relaxed text-gray-700 text-left"
+      >
+        Property data from your FM system is automatically synchronized to
+        proprty.ai, eliminating the need for manual entry. BFE numbers,
+        historical maintenance, building components and materials are retrieved
+        and enriched with public data such as year of construction, quantities
+        and costs.
+      </p>
     </div>
-
-    <!-- Text -->
-    <h2 class="text-3xl text-[#187770] mb-6 text-left">
-      Seamless integration with your FM system
-    </h2>
-
-    <p class="max-w-3xl mx-auto text-sm leading-relaxed text-gray-700 text-left">
-      Property data from your FM system is automatically synchronized to proprty.ai,
-      eliminating the need for manual entry. BFE numbers, historical maintenance,
-      building components and materials are retrieved and enriched with public data
-      such as year of construction, quantities and costs.
-    </p>
-
-  </div>
- 
-</section>
- <!-- kasse 1 -->
+  </section>
 
   <!-- kasse 2 -->
-  <section class="w-full py-32 ">
+  <section class="w-full py-32">
     <div class="max-w-5xl mx-auto px-6 text-center relative">
-
-      <!-- Illustration wrapper -->
-      <div class="relative mx-auto mb-20 w-[600px] h-full">
-
-        <!-- Illustration placeholder -->
-          <img src="/skitse2.webp" alt="skitse2" class="w-full h-full object-cover rounded-lg" />
-        
-
+      <div
+        class="relative mx-auto mb-20 w-full max-w-[320px] md:max-w-[600px]"
+      >
+        <img
+          src="/skitse2.webp"
+          alt="skitse2"
+          class="w-full h-auto object-cover rounded-lg"
+        />
       </div>
 
-      <!-- Text -->
       <h2 class="text-3xl text-[#187770] mb-6 text-left">
         Enrich your decisions with data
       </h2>
 
-      <p class="max-w-3xl mx-auto text-sm leading-relaxed text-gray-700 text-left">
-        Maintenance needs are predicted with AI that estimates remaining lifespan and identifies critical building components. You register your property as always, but now with an extra layer of insight. proprty.ai helps you ensure nothing is overlooked without you having to change your work routine.
+      <p
+        class="max-w-3xl mx-auto text-sm leading-relaxed text-gray-700 text-left"
+      >
+        Maintenance needs are predicted with AI that estimates remaining
+        lifespan and identifies critical building components. You register your
+        property as always, but now with an extra layer of insight. proprty.ai
+        helps you ensure nothing is overlooked without you having to change your
+        work routine.
       </p>
-
     </div>
-
   </section>
-   <!-- kasse 2 -->
 
-    <!-- kasse 3 -->
-	 <section class="w-full py-32 ">
+  <!-- kasse 3 -->
+  <section class="w-full py-32">
     <div class="max-w-5xl mx-auto px-6 text-center relative">
-
-      <!-- Illustration wrapper -->
-      <div class="relative mx-auto mb-20 w-[380px] h-full">
-
-        <!-- Illustration placeholder -->
-        
-          <img src="/skitse3.webp" alt="skitse3" class="w-full h-full object-cover rounded-lg" />
-        
-
+      <div
+        class="relative mx-auto mb-20 w-full max-w-[260px] md:max-w-[380px]"
+      >
+        <img
+          src="/skitse3.webp"
+          alt="skitse3"
+          class="w-full h-auto object-cover rounded-lg"
+        />
       </div>
 
-      <!-- Text -->
       <h2 class="text-3xl text-[#187770] mb-6 text-left">
         Enrich your decisions with data
       </h2>
 
-      <p class="max-w-3xl mx-auto text-sm leading-relaxed text-gray-700 text-left">
-       Condition assessments and maintenance plans are automatically generated and sent back to your FM system in a familiar format. Data on performed maintenance is recorded and updated continuously, so you always work with the latest information – just like you usually do, only smarter.
-
+      <p
+        class="max-w-3xl mx-auto text-sm leading-relaxed text-gray-700 text-left"
+      >
+        Condition assessments and maintenance plans are automatically generated
+        and sent back to your FM system in a familiar format. Data on performed
+        maintenance is recorded and updated continuously, so you always work
+        with the latest information – just like you usually do, only smarter.
+      </p>
     </div>
-
   </section>
-
-  
-
-
 </MainLayout>
+
 <script>
-	/* Import af Motion One bibliotek */
-	import { animate, stagger, inView, scroll } from "motion";
+  import { animate, stagger, inView } from "motion";
 
-	animate( "body", { opacity: [ 0, 1] }, { duration: 1 })
+  animate("body", { opacity: [0, 1] }, { duration: 1 });
 
-
-inView("#steps-stagger", () => {
-  animate(
-    ".step-card",
-    { 
-      opacity: [0, 1], 
-      x: ["100px", "0px"] 
-    },
-    {
-      duration: 0.6,
-      delay: stagger(0.2), // one-by-one effect
-      easing: "cubic-bezier(0.22, 1, 0.36, 1)"
-    }
-  );
-});
-
-	</script>
+  inView("#steps-stagger", () => {
+    animate(
+      ".step-card",
+      { opacity: [0, 1], x: ["100px", "0px"] },
+      {
+        duration: 0.6,
+        delay: stagger(0.2),
+        easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+      }
+    );
+  });
+</script>
