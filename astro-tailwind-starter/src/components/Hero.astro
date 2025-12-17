@@ -2,41 +2,57 @@
 import Button from "./Button.astro";
 
 interface Props {
-  title: string;        // Dynamic H1 text
-  background?: string;  // Optional custom background image
+  title: string;
+  background?: string; // fallback poster image
 }
 
 const {
   title,
-  background = "https://via.placeholder.com/1600x900" // Default placeholder
+  background = "https://via.placeholder.com/1600x900"
 } = Astro.props;
 ---
 
-<section class="relative w-full h-[70vh] md:h-[80vh] font-[Encode_Sans]">
+<section class="relative w-full h-[70vh] md:h-[100vh] overflow-hidden">
 
-  <!-- BACKGROUND IMAGE -->
+  <!-- BACKGROUND VIDEO -->
   <div class="absolute inset-0 overflow-hidden">
-    <img 
-      src={background} 
-      alt="Hero background" 
-      class="w-full h-full object-cover"
-    />
+    <video
+      class="hero-video w-full h-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster={background}
+    >
+      <source src="/proprty_hero_video.mp4" type="video/mp4" />
+    </video>
   </div>
 
-  <!-- GREEN TEXT PANEL (aligned right) -->
+  <button
+    class="video-toggle absolute bottom-25 right-25 z-20
+           inline-flex items-center justify-center
+           font-medium rounded-md transition-colors
+           bg-[#2C6FE8] text-white hover:bg-blue-600
+           px-6 py-3 text-base"
+    aria-label="Toggle video sound"
+  >
+     Muted
+  </button>
+
+  <!-- GREEN TEXT PANEL -->
   <div 
-  class="hero-panel absolute right-0 top-1/2 -translate-y-1/2
-         bg-[#187770] bg-opacity-95 text-white
-         w-full max-w-lg px-8 py-10 md:px-12 md:py-16 rounded-none md:rounded-lg
-         flex flex-col gap-6 md:gap-8">
+    class="hero-panel absolute right-0 top-1/2 -translate-y-1/2
+           bg-[#187770] bg-opacity-95 text-white
+           w-full max-w-lg px-8 py-10 md:px-12 md:py-16
+           rounded-none md:rounded-lg
+           flex flex-col gap-6 md:gap-8
+           transition-all duration-500 ease-out
+           opacity-100 translate-x-0">
 
-
-    <!-- H1 TITLE (Dynamic) -->
     <h1 class="text-3xl md:text-4xl font-semibold leading-tight">
       {title}
     </h1>
 
-    <!-- CTA BUTTONS -->
     <div class="flex flex-col sm:flex-row gap-4">
       <Button text="Book a meeting" href="/meeting" size="lg" />
       <Button text="See how it works" href="/how-it-works" size="lg" />
@@ -45,25 +61,26 @@ const {
   </div>
 </section>
 
-<script> 
-  /* Import af Motion One bibliotek */
-	import { animate, stagger, inView, scroll } from "motion";
+<script type="module">
+  const video = document.querySelector(".hero-video");
+  const toggleBtn = document.querySelector(".video-toggle");
+  const heroPanel = document.querySelector(".hero-panel");
 
-  inView(".hero-panel", (element) => {
-    // Slide in from right
-    animate(
-      element,
-      { transform: ["translateX(100%)", "translateX(0%)"] },
-      { duration: 1.2, easing: "ease-out" }
-    );
+  if (video && toggleBtn && heroPanel) {
+    toggleBtn.addEventListener("click", () => {
+      video.muted = !video.muted;
 
-    // (Optional) what happens when it leaves view
-    // return () => {
-    //   animate(
-    //     element,
-    //     { transform: "translateX(100%)" },
-    //     { duration: 0.8 }
-    //   );
-    // };
-  });
+      if (!video.muted) {
+        // MUTED til unmute
+        heroPanel.classList.add("opacity-0", "translate-x-20");
+        heroPanel.classList.remove("opacity-100", "translate-x-0");
+        toggleBtn.textContent = "Sound on";
+      } else {
+        // UNMUTED til mute
+        heroPanel.classList.remove("opacity-0", "translate-x-20");
+        heroPanel.classList.add("opacity-100", "translate-x-0");
+        toggleBtn.textContent = "Muted";
+      }
+    });
+  }
 </script>
